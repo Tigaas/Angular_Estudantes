@@ -1,0 +1,19 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Ana Maria",
+      "course": "Computação"
+    },
+    {
+      "id": 2,
+      "name": "Fernanda Silva",
+      "course": "Computação"
+    },
+    {
+      "id": 3,
+      "name": "Victor Hugo Scmidt Silva",
+      "course": "Engenharia Mecânica"
+    }
+  ]
+}
