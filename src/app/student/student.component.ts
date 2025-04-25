@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Student } from '../student';
 import { StudentService } from '../student.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-student',
@@ -8,17 +9,55 @@ import { StudentService } from '../student.service';
   templateUrl: './student.component.html',
   styleUrl: './student.component.css'
 })
-export class StudentComponent  implements OnInit{
-  students : Student[] = [];
-  // injetando o bglh
-  constructor(private service: StudentService){}
-  
-ngOnInit(): void {
-  this.service.getStudents().subscribe({
-    next: json => this.students = json
-  })
+export class StudentComponent implements OnInit {
 
- 
+  students: Student[] = [];
+
+  formGroupStudent: FormGroup;
+
+  constructor(private service: StudentService,
+    private FormBuilder: FormBuilder
+  ) {
+    this.formGroupStudent = FormBuilder.group(
+      {
+        id: [''],
+        name: [''],
+        course: ['']
+      }
+    )
+  }
+
+
+  ngOnInit(): void {
+    this.loadStudents();
+
+
+  }
+  loadStudents(){
+    this.service.getAll().subscribe({
+      next: json => this.students = json
+    })
+
+  }
+  save() {
+    this.service.save(this.formGroupStudent.value).subscribe({
+      next: json => {
+        this.students.push(json);
+        this.formGroupStudent.reset();
+      }
+    })
+  }
+  delete(student: Student) {
+    this.service.delete(student).subscribe(
+      {
+        next: () => this.loadStudents()
+      }
+    );
+    }
 }
 
+
+function next(value: Student): void {
+  throw new Error('Function not implemented.');
 }
+
