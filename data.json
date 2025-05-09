@@ -2,43 +2,13 @@
   "students": [
     {
       "id": 1,
-      "name": "Ana Maria",
-      "course": "Computação"
+      "name": "victor schmidt silva barranco",
+      "course": "promiscuidade"
     },
     {
       "id": 2,
-      "name": "Fernanda Silva",
-      "course": "Computação"
-    },
-    {
-      "id": 3,
-      "name": "Victor Hugo Scmidt Silva",
-      "course": "Engenharia Mecânica"
-    },
-    {
-      "id": 5,
       "name": "Tiago Rocha Ribeiro",
-      "course": "ADS"
-    },
-    {
-      "id": 8,
-      "name": "Alberto Silva",
-      "course": "Engenharia"
-    },
-    {
-      "id": 13,
-      "name": "Ana Monteiro",
-      "course": "Enfermagem"
-    },
-    {
-      "id": 14,
-      "name": "Edson Nascimento",
-      "course": "Ed Física"
-    },
-    {
-      "id": 15,
-      "name": "Murilo Tenório",
-      "course": "Careca"
+      "course": "ADS AMS"
     }
   ]
 }
